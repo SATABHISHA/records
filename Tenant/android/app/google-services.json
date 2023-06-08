@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "436590148667",
+    "project_id": "dailyrecords-85331",
+    "storage_bucket": "dailyrecords-85331.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436590148667:android:ebae58aef6e1d59b80701e",
+        "android_client_info": {
+          "package_name": "org.tenant.tenant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436590148667-nanfjdknk18cadi3f8nrpf9g7587nec7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGH9soCZUa-WHsys6DgRaNljOD746ACLg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436590148667-nanfjdknk18cadi3f8nrpf9g7587nec7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
