@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tenant/widgets/reusable_common_widgets/constants.dart';
 import 'package:tenant/widgets/reusable_common_widgets/rounded_button.dart';
 
 class Login extends StatefulWidget {
@@ -10,6 +11,16 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
+  String? validateEmail(String? value) {
+    if (value != null) {
+      if (value.length > 5 && value.contains('@') && value.endsWith('.com')) {
+        return null;
+      }
+      return 'Enter a Valid Email Address';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -120,12 +131,38 @@ class _LoginState extends State<Login> {
                                 child: Text('Let\'s Start', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19)),
                               ),
                               SizedBox(height: 10,),
+                              //---Email Id, code starts---
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                                 child: Text('Enter your email', style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15, color: Color.fromRGBO(
                                     74, 74, 75, 1.0))),
                               ),
                               SizedBox(height: 20,),
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                                child: SizedBox(
+                                  width: double.infinity,
+                                  height: 50,
+                                  child: Form(
+                                    autovalidateMode: AutovalidateMode.always,
+                                    child: TextFormField(
+                                      // controller: _controller_user_id,
+                                      validator: validateEmail,
+                                      textAlign: TextAlign.left,
+                                      keyboardType: TextInputType.emailAddress,
+                                      onChanged: (value){
+                                        // userId = value;
+
+                                      },
+                                      style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                      decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                          246, 242, 242, 1.0),hintText: 'satabhishar@arbsoft.com'),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              //---Email Id, code ends---
+
                               /*Padding(
                                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: IntlPhoneField(
