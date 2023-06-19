@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tenant/widgets/reusable_common_widgets/constants.dart';
 import 'package:tenant/widgets/reusable_common_widgets/rounded_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class Login extends StatefulWidget {
   // const Login({Key? key}) : super(key: key);
@@ -125,19 +126,20 @@ class _LoginState extends State<Login> {
                             )
                           ),
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(0, 24, 0, 0),
-                                child: Text('Let\'s Start', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19)),
+                                child: Center(child: Text('Let\'s Start', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19))),
                               ),
                               SizedBox(height: 10,),
                               //---Email Id, code starts---
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                                 child: Text('Enter your email', style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15, color: Color.fromRGBO(
                                     74, 74, 75, 1.0))),
                               ),
-                              SizedBox(height: 20,),
+                              SizedBox(height: 0,),
                               Padding(
                                 padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
                                 child: SizedBox(
@@ -156,12 +158,58 @@ class _LoginState extends State<Login> {
                                       },
                                       style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                       decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                          246, 242, 242, 1.0),hintText: 'satabhishar@arbsoft.com'),
+                                          246, 242, 242, 1.0),hintText: ''),
                                     ),
                                   ),
                                 ),
                               ),
                               //---Email Id, code ends---
+
+
+                              //---Password, code starts
+                              SizedBox(height: 15,),
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                child: AutoSizeText(
+                                  'Enter your Password',
+                                  style: TextStyle(color: Color.fromRGBO(
+                                      86, 85, 85, 1.0),
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                  wrapWords: true,
+                                  minFontSize: 8,
+                                  maxFontSize: 15,
+                                  maxLines: 1,
+                                  textAlign: TextAlign.left,),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                                child: SizedBox(
+                                  width: double.infinity,
+                                  height: 50,
+                                  child: TextField(
+                                    // controller: _controller_user_id,
+                                    textAlign: TextAlign.left,
+                                    keyboardType: TextInputType.visiblePassword,
+                                    obscureText: true,
+                                    maxLines: 1,
+                                    onChanged: (value){
+                                      // userId = value;
+                                      setState(() {
+                                        // CompanyDetails.companyName = value;
+                                        /*if(value.isEmpty){
+                                          CompanyDetails.companyName = 'ARB Software India Pvt Ltd';
+                                        }else{
+                                          CompanyDetails.companyName = value;
+                                        }*/
+                                      });
+                                    },
+                                    style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                    decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(246, 242, 242, 1.0),hintText: ''),
+                                  ),
+                                ),
+                              ),
+                              //---Password, code ends
 
                               /*Padding(
                                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
@@ -198,7 +246,7 @@ class _LoginState extends State<Login> {
 
                               Padding(
                                 padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                                child: Text('Terms & Conditions | Privacy Policy', style: TextStyle(color: Color.fromRGBO(0, 70, 164, 1.0)),),
+                                child: Center(child: Text('Terms & Conditions | Privacy Policy', style: TextStyle(color: Color.fromRGBO(0, 70, 164, 1.0)),)),
                               )
                             ],
                           ),
