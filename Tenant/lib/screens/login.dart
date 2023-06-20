@@ -1,8 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:tenant/widgets/reusable_common_widgets/constants.dart';
 import 'package:tenant/widgets/reusable_common_widgets/rounded_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+
+final _firestore = FirebaseFirestore.instance;
 class Login extends StatefulWidget {
   // const Login({Key? key}) : super(key: key);
   static String id = 'Login';
@@ -22,8 +25,17 @@ class _LoginState extends State<Login> {
     }
   }
 
+  void messagesStream() async {
+    await for( var snapshot in _firestore.collection('User').snapshots()){
+      for (var message in snapshot.docs){
+        print(message.data());
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    messagesStream();
     return WillPopScope(
       onWillPop: () async {
         return false;

@@ -1,7 +1,19 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:tenant/screens/login.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(); //---for mobile
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+      apiKey: "AIzaSyAS5alN0XMgU9ofvrCxEDqtryX4Ghq6OIo", // Your apiKey
+      appId: "1:436590148667:web:16a0215d002a334f80701e", // Your appId
+      messagingSenderId: "436590148667", // Your messagingSenderId
+      projectId: "dailyrecords-85331", // Your projectId
+    ),
+  ); //---for web//
+
   runApp(const MyApp());
 }
 
