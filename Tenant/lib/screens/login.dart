@@ -36,6 +36,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     messagesStream();
+    var email, pwd;
     return WillPopScope(
       onWillPop: () async {
         return false;
