@@ -258,6 +258,18 @@ class _LoginState extends State<Login> {
                               //----button code ends
 
                               Padding(
+                                padding: EdgeInsets.fromLTRB(0, 10, 0, 20),
+                                child: Center(child: Row(
+                                  // crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text('New User?', style: TextStyle(color: Color.fromRGBO(0, 70, 164, 1.0)),),
+                                    MaterialButton( onPressed: (){}, child: Text('Register Now', style: TextStyle(color: Color.fromRGBO(0, 70, 164, 1.0)),)),
+                                  ],
+                                )),
+                              ),
+
+                              Padding(
                                 padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
                                 child: Center(child: Text('Terms & Conditions | Privacy Policy', style: TextStyle(color: Color.fromRGBO(0, 70, 164, 1.0)),)),
                               )
