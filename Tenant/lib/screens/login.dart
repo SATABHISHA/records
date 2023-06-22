@@ -264,7 +264,9 @@ class _LoginState extends State<Login> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text('New User?', style: TextStyle(color: Color.fromRGBO(0, 70, 164, 1.0)),),
-                                    MaterialButton( onPressed: (){}, child: Text('Register Now', style: TextStyle(color: Color.fromRGBO(0, 70, 164, 1.0)),)),
+                                    MaterialButton( onPressed: (){
+
+                                    }, child: Text('Register Now', style: TextStyle(color: Color.fromRGBO(0, 70, 164, 1.0)),)),
                                   ],
                                 )),
                               ),
