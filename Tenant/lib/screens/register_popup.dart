@@ -11,6 +11,9 @@ class RegisterPopup extends StatefulWidget {
 }
 
 class _RegisterPopupState extends State<RegisterPopup> {
+  final TextEditingController _nameController = new TextEditingController();
+  final TextEditingController _passwordController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -97,7 +100,7 @@ class _RegisterPopupState extends State<RegisterPopup> {
                               width: double.infinity,
                               height: 70,
                               child: TextField(
-                                controller: _mobileNumberController,
+                                controller: _passwordController,
                                 textAlign: TextAlign.left,
                                 keyboardType: TextInputType.number,
                                 maxLength: 10,
