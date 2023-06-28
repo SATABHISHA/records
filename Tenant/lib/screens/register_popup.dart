@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:tenant/widgets/reusable_common_widgets/constants.dart';
+import 'package:tenant/widgets/reusable_common_widgets/rounded_button.dart';
 
 class RegisterPopup extends StatefulWidget {
   const RegisterPopup({Key? key}) : super(key: key);
@@ -128,32 +130,10 @@ class _RegisterPopupState extends State<RegisterPopup> {
                             height: 85,
                             child: Padding(
                               padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                              child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Verify Number', onPressed: widget.onPressed
-                                /*child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Verify Number', onPressed:() async {
-                               // EasyLoading.show(status: 'Loading...');
+                              child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Verify Number', onPressed: () async {
 
-                               if(_mobileNumberController.text.isEmpty ||
-                               _nameController.text.isEmpty){
-                                 print('Error');
-                                 final scaffold = ScaffoldMessenger.of(context);
-                                 scaffold.showSnackBar(
-                                   SnackBar(
-                                     content: Text('Field(s) cannot be left blank'),
-                                     action: SnackBarAction(label: 'OK', onPressed: (){
-                                       scaffold.hideCurrentSnackBar;
-                                       *//*if(ServiceProviderDetails.isLoad == false){
-            Navigator.pushNamed(context, LoadListing.id);
-          }*//*
+                              } ,
 
-                                     }),
-                                   ),
-                                 );
-                               }else{
-                                 Navigator.pop(context);
-
-
-                               }
-                             }*/
                               ),
                             ),
                           )
