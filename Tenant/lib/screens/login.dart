@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:tenant/screens/register_popup.dart';
 import 'package:tenant/widgets/reusable_common_widgets/constants.dart';
 import 'package:tenant/widgets/reusable_common_widgets/rounded_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -265,7 +266,10 @@ class _LoginState extends State<Login> {
                                   children: [
                                     Text('New User?', style: TextStyle(color: Color.fromRGBO(0, 70, 164, 1.0)),),
                                     MaterialButton( onPressed: (){
+                                      showDialog(context: context, builder: (BuildContext context) {
 
+                                        return RegisterPopup();
+                                      });
                                     }, child: Text('Register Now', style: TextStyle(color: Color.fromRGBO(0, 70, 164, 1.0)),)),
                                   ],
                                 )),

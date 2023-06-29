@@ -4,7 +4,11 @@ import 'package:tenant/widgets/reusable_common_widgets/constants.dart';
 import 'package:tenant/widgets/reusable_common_widgets/rounded_button.dart';
 
 class RegisterPopup extends StatefulWidget {
-  const RegisterPopup({Key? key}) : super(key: key);
+  // const RegisterPopup({Key? key}) : super(key: key);
+  // VoidCallback onPressed;
+  RegisterPopup();
+
+
 
   @override
   State<RegisterPopup> createState() => _RegisterPopupState();
@@ -102,9 +106,8 @@ class _RegisterPopupState extends State<RegisterPopup> {
                               child: TextField(
                                 controller: _passwordController,
                                 textAlign: TextAlign.left,
-                                keyboardType: TextInputType.number,
-                                maxLength: 10,
                                 maxLines: 1,
+                                obscureText: true,
                                 onChanged: (value){
                                   // userId = value;
                                   setState(() {
@@ -119,22 +122,22 @@ class _RegisterPopupState extends State<RegisterPopup> {
                                 },
                                 style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                 decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                    255, 255, 255, 1.0),hintText: 'Mobile Number'),
+                                    255, 255, 255, 1.0),hintText: 'Password'),
                               ),
                             ),
                           ),
                           //---Mobile Number, code ends
 
                           SizedBox(height: 10,),
-                          AutoSizeText('You will receive OTP on this number', style: TextStyle(fontWeight: FontWeight.normal, color: Color.fromRGBO(
-                              45, 41, 41, 1.0), fontSize: 13),),
+
                           Container(
                             width: double.infinity,
                             height: 85,
                             child: Padding(
                               padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                              child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Verify Number', onPressed: () async {
+                              child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Register', onPressed: () async {
 
+                                Navigator.pop(context);
                               } ,
 
                               ),
