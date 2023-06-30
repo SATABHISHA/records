@@ -18,6 +18,15 @@ class _RegisterPopupState extends State<RegisterPopup> {
   final TextEditingController _nameController = new TextEditingController();
   final TextEditingController _passwordController = new TextEditingController();
 
+  String? validateEmail(String? value) {
+    if (value != null) {
+      if (value.length > 5 && value.contains('@') && value.endsWith('.com')) {
+        return null;
+      }
+      return 'Enter a Valid Email Address';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -96,6 +105,32 @@ class _RegisterPopupState extends State<RegisterPopup> {
                           ),
                           //---Full Name, code ends
 
+                          SizedBox(height: 15,),
+                          //---Email Id, code starts---
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                            child: SizedBox(
+                              width: double.infinity,
+                              height: 50,
+                              child: Form(
+                                autovalidateMode: AutovalidateMode.always,
+                                child: TextFormField(
+                                  // controller: _controller_user_id,
+                                  validator: validateEmail,
+                                  textAlign: TextAlign.left,
+                                  keyboardType: TextInputType.emailAddress,
+                                  onChanged: (value){
+                                    // userId = value;
+
+                                  },
+                                  style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                  decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                      246, 242, 242, 1.0),hintText: 'Enter your email'),
+                                ),
+                              ),
+                            ),
+                          ),
+                          //---Email Id, code ends---
                           // ---Mobile Number, code starts
                           SizedBox(height: 15,),
                           Padding(
