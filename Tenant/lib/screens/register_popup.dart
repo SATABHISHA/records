@@ -106,6 +106,7 @@ class _RegisterPopupState extends State<RegisterPopup> {
                           //---Full Name, code ends
 
                           SizedBox(height: 15,),
+
                           //---Email Id, code starts---
                           Padding(
                             padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
